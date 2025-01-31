@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Pet Shop</title>
   <style>
     html, body {
       overflow-x: hidden;
@@ -83,27 +83,27 @@
       <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row-reverse relative">
 
         <!-- Text -->
-        <div class="block md:hidden text-center px-6 py-8">
-          <h1 class="text-3xl font-bold mb-4">Pamper Your Pet, Because They <br> Deserve the Best</h1>
-          <p class="text-lg mb-4">
+        <div class="block text-sm md:hidden text-center px-6 py-8">
+          <h1 class="text-5xl lg:text-5xl font-bold mb-8 sm:pt-5 "> <span class=" lg:text-7xl">Pamper Your Pet,</span> Because They <br> Deserve the Best</h1>
+          <p class=" font-bold text-2xl lg:text-xl mb-6 ">
             Discover a world of treats, toys, and essentials handpicked for <br>
-            your furry friends. Shop now and make tails wag with joy!
+            your furry friends. Shop now and make tails wag with Joy!
           </p>
           <button class=" border border-transparent btn bg-[#ffdc26] text-black">Find A Pet</button>
         </div>
 
         <!-- Image -->
         <div class="relative w-full md:w-full">
-          <img class="w-full h-auto object-cover" src="./c1-assets/cat-big.png" alt="Cat">
+          <img class="w-full h-auto object-cover " src="./c1-assets/cat-big.png" alt="Cat">
 
           <!-- Text inside image-->
           <div class="hidden md:block absolute top-10 left-10 md:top-16 md:left-16 lg:top-20 lg:left-20 text-black max-w-lg">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Pamper Your Pet, Because They <br> Deserve the Best</h1>
-            <p class="text-lg md:text-2xl mb-4">
+            <h1 class="text-6xl md:text-5xl font-bold mb-4">Pamper Your Pet, Because They <br> Deserve the Best</h1>
+            <p class="text-3xl md:text-4xl mb-4 ">
               Discover a world of treats, toys, and essentials handpicked for <br>
               your furry friends. Shop now and make tails wag with joy!
             </p>
-            <button class="btn bg-[#ffdc26] text-black">Find A Pet</button>
+            <button class="btn bg-[#ffdc26] text-black ">Find A Pet</button>
           </div>
         </div>
 
@@ -181,6 +181,163 @@
         </div>
       </div>
     </section>
+      <!-- Trending-pet-section -->
+<!-- Trending Pet Section -->
+<div class="bg-[#fff9f4] py-10 max-w-8xl mx-auto">
+  <section class="max-w-7xl mx-auto pt-10 mb-10 px-4 sm:px-6 lg:px-0">
+    <!-- Section Title -->
+    <h1 class="font-bold text-3xl mb-6">Trending Pet Products</h1>
+
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Featured Product -->
+      <div class=" h-80 w-full lg:w-2/4 md:w-2/4 relative border border-transparent   bg-[#F9DF8A] rounded-md overflow-hidden">
+        <!-- Image -->
+        <img class="absolute right-5 bottom-0 w-40 lg:w-44 h-auto" src="./c1-assets/cute-pet-mid.png" alt="">
+
+        <!-- Text Content (Aligned Left) -->
+        <div class="absolute left-6 top-12">
+          <h2 class="font-bold text-3xl">T-Shirt For Dogs</h2>
+          <p class="text-md">Discover a world of treats, toys, and <br> essentials handpicked for your pet.</p>
+          <button class="btn-outline h-8 w-24 border border-gray-500 rounded-md bg-white mt-2">Shop Now</button>
+        </div>
+      </div>
+      <!-- Product Grid (9 Cards in 3 Columns) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full ">
+        <!-- Product Cards -->
+        <div class="bg-white flex items-center h-24 w-full border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3 ">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Bed</h2>
+            <h4 class="font-bold text-sm">$39.99</h4>
+          </div>
+        </div>
+
+        <!-- Repeat the product cards for 8 more cards -->
+        <div class="bg-white flex items-center h-24 w-full border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Toy</h2>
+            <h4 class="font-bold text-sm">$19.99</h4>
+          </div>
+        </div>
+
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+          <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
+            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+          </div>
+          <div class="ml-3">
+            <div class="flex items-center gap-1">
+              <img class="size-5" src="./c1-assets/star.png" alt="">
+              <h3 class="text-sm">4.5</h3>
+            </div>
+            <h2 class="font-bold text-sm">Pet Leash</h2>
+            <h4 class="font-bold text-sm">$14.99</h4>
+          </div>
+        </div>
+
+        <!-- Repeat product cards as needed... -->
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
   </main>
 
   <footer></footer>
