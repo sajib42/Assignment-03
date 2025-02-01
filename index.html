@@ -5,16 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Shop</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
     html, body {
       overflow-x: hidden;
       max-width: 100%;
+      font-family: "ADLaM Display", serif;
     }
+
+
+    @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slide-in {
+    animation: slideIn 1s ease-out forwards;
+  }
+}
+
   </style>
   
   <!-- DaisyUI -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Tailwind CDN -->
+   <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -79,48 +109,52 @@
 
   <main>
     <!-- First Page Section -->
-    <section class="mt-4 mb-16 md:mb-0 lg:mb-0 relative">
+    <section class="animate- mt-4 mb-16 md:mb-0 lg:mb-0 relative">
       <div class="w-full max-w-7xl mx-auto flex flex-col md:flex-row-reverse relative">
-
-        <!-- Text -->
-        <div class="block text-sm md:hidden text-center px-6 py-8">
-          <h1 class="text-5xl lg:text-5xl font-bold mb-8 sm:pt-5 "> <span class=" lg:text-7xl">Pamper Your Pet,</span> Because They <br> Deserve the Best</h1>
-          <p class="  lg:font-black text-2xl lg:text-l mb-6 ">
+    
+        <!-- Text (For Mobile) -->
+        <div class="block text-sm md:hidden text-center px-6 py-8 opacity-0 animate-fade-in">
+          <h1 class=" text-5xl lg:text-5xl font-bold mb-8 sm:pt-5 animate-slide-in">
+            <span class="  lg:text-7xl">Pamper Your Pet,</span> Because They <br> Deserve the Best
+          </h1>
+          <p class="lg:font-black text-2xl lg:text-l mb-6">
             Discover a world of treats, toys, and essentials handpicked for <br>
-            your furry friends. Shop now and make tails wag with Joy!
+            your furry friends. Shop now and make tails wag with joy!
           </p>
           <button class=" border border-transparent btn bg-[#ffdc26] text-black">Find A Pet</button>
         </div>
-
+    
         <!-- Image -->
         <div class="relative w-full md:w-full">
-          <img class="w-full h-auto object-cover " src="./c1-assets/cat-big.png" alt="Cat">
-
-          <!-- Text inside image-->
-          <div class="hidden md:block absolute top-10 left-10 md:top-16 md:left-16 lg:top-20 lg:left-20 text-black max-w-lg">
+          <!-- animate-bounce duration-1000 w-full h-auto object-cover  -->
+          <img class=" transform hover:scale-110 duration-500 " src="./c1-assets/cat-big.png" alt="Cat">
+    
+          <!-- Text inside image -->
+          <div class="hidden md:block absolute top-10 left-10 md:top-16 md:left-16 lg:top-20 lg:left-20 text-black max-w-lg opacity-0 animate-slide-in">
             <h1 class="text-6xl md:text-5xl font-bold mb-4">Pamper Your Pet, Because They <br> Deserve the Best</h1>
-            <p class="text-3xl md:text-4xl mb-4 ">
+            <p class="text-3xl md:text-4xl mb-4">
               Discover a world of treats, toys, and essentials handpicked for <br>
               your furry friends. Shop now and make tails wag with joy!
             </p>
-            <button class="btn bg-[#ffdc26] text-black ">Find A Pet</button>
+            <button class="btn bg-[#ffdc26] text-black">Find A Pet</button>
           </div>
         </div>
-
+    
       </div>
     </section>
+    
 
     <!-- Categories Section -->
-    <section class="pt-10 mb-10 max-w-7xl mx-auto md:mt-10 px-4 sm:px-6 lg:px-0 ">
+    <section class=" pt-10 mb-10 max-w-7xl mx-auto md:mt-10 px-4 sm:px-6 lg:px-0 ">
 
-      <h3 class="font-bold text-2xl mb-4 ">Browse By Categories</h3>
+      <h3 class="font-bold text-2xl mb-4 lg:pl-5 ">Browse By Categories</h3>
       <!-- Grid  -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 w-full px-4 pr-2 ">
 
 
 
         <!-- Category Item -->
-        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg">
+        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg transform hover:scale-110 duration-500 ">
           <div class="mt-4">
             <div class="rounded-full h-24 w-24 bg-white mx-auto">
               <img class="pt-8 rounded-full mx-auto" src="./c1-assets/dog-cartoon.png" alt="Dog">
@@ -130,7 +164,7 @@
           </div>
         </div>
 
-        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg">
+        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg transform hover:scale-110 duration-500 ">
           <div class="mt-4">
             <div class="rounded-full h-24 w-24 bg-white mx-auto">
               <img class="pt-8 rounded-full mx-auto" src="./c1-assets/fish-cartoon.png" alt="Fish">
@@ -140,7 +174,7 @@
           </div>
         </div>
 
-        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg">
+        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg transform hover:scale-110 duration-500 ">
           <div class="mt-4">
             <div class="rounded-full h-24 w-24 bg-white mx-auto">
               <img class="pt-8 rounded-full mx-auto" src="./c1-assets/cat-cartoon.png" alt="Cat">
@@ -150,7 +184,7 @@
           </div>
         </div>
 
-        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg">
+        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg transform hover:scale-110 duration-500 ">
           <div class="mt-4">
             <div class="rounded-full h-24 w-24 bg-white mx-auto">
               <img class="pt-8 rounded-full mx-auto" src="./c1-assets/bird-cartoon.png" alt="Bird">
@@ -160,7 +194,7 @@
           </div>
         </div>
 
-        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg">
+        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg transform hover:scale-110 duration-500 ">
           <div class="mt-4">
             <div class="rounded-full h-24 w-24 bg-white mx-auto">
               <img class="pt-8 rounded-full mx-auto" src="./c1-assets/mouse-cartoon.png" alt="Mouse">
@@ -170,7 +204,7 @@
           </div>
         </div>
 
-        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg">
+        <div class="bg-[#F9DF8A] text-center h-68 pt-4 pb-4 w-full border border-transparent rounded-lg transform hover:scale-110 duration-500 ">
           <div class="mt-4">
             <div class="rounded-full h-24 w-24 bg-white mx-auto">
               <img class="pt-8 rounded-full mx-auto" src="./c1-assets/rabbit-cartoon.png" alt="Rabbit">
@@ -186,12 +220,12 @@
 <!-- Trending Pet Section -->
 <div class="bg-[#fff9f4] py-10 max-w-8xl mx-auto">
   <section class="max-w-7xl mx-auto mt-8 pt-10 mb-10 px-4 sm:px-6 lg:px-0">
-    <!-- Section Title -->
+    
     <h1 class="font-bold text-3xl mb-6">Trending Pet Products</h1>
 
     <div class="flex flex-col md:flex-row gap-6">
-      <!-- Featured Product -->
-      <div class=" h-80 w-full lg:w-2/4 md:w-2/4 relative border border-transparent   bg-[#F9DF8A] rounded-md overflow-hidden">
+      <!-- Product -->
+      <div class=" transform hover:scale-105 duration-500  h-80 w-full lg:w-2/4 md:w-2/4 relative border border-transparent   bg-[#F9DF8A] rounded-md overflow-hidden">
         <!-- Image -->
         <img class="absolute right-5 bottom-0 w-40 lg:w-44 h-auto" src="./c1-assets/cute-pet-small.png" alt="">
 
@@ -205,11 +239,11 @@
       <!--  Grid  -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full ">
         <!-- Product Cards -->
-        <div class="bg-white flex items-center h-24 w-full border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class=" transform hover:scale-110 duration-500  bg-white flex items-center h-24 w-full border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
             <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
           </div>
-          <div class="ml-3 ">
+          <div class="ml-3  ">
             <div class="flex items-center gap-1">
               <img class="size-5" src="./c1-assets/star.png" alt="">
               <h3 class="text-sm">4.5</h3>
@@ -220,9 +254,9 @@
         </div>
 
         <!--  cards -->
-        <div class="bg-white flex items-center h-24 w-full border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class=" transform hover:scale-110 duration-500  bg-white flex items-center h-24 w-full border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/cat-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -234,9 +268,9 @@
           </div>
         </div>
 
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class= " transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/fish-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -247,9 +281,9 @@
             <h4 class="font-bold text-sm">$14.99</h4>
           </div>
         </div>
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class=" transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/mouse-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -260,9 +294,9 @@
             <h4 class="font-bold text-sm">$14.99</h4>
           </div>
         </div>
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class="transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/bird-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -273,9 +307,9 @@
             <h4 class="font-bold text-sm">$14.99</h4>
           </div>
         </div>
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class=" transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/rabbit-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -286,9 +320,9 @@
             <h4 class="font-bold text-sm">$14.99</h4>
           </div>
         </div>
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class=" transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/fish-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -299,9 +333,9 @@
             <h4 class="font-bold text-sm">$14.99</h4>
           </div>
         </div>
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class="transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/cat-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -312,9 +346,9 @@
             <h4 class="font-bold text-sm">$14.99</h4>
           </div>
         </div>
-        <div class="bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
+        <div class=" transform hover:scale-110 duration-500  bg-white flex items-center h-24 border border-gray-200 rounded-md p-2 shadow-md justify-center">
           <div class="h-16 w-16 bg-[#fff9f4] flex justify-center items-center rounded-md">
-            <img class="w-12" src="./c1-assets/dog-cartoon.png" alt="">
+            <img class="w-12" src="./c1-assets/bird-cartoon.png" alt="">
           </div>
           <div class="ml-3">
             <div class="flex items-center gap-1">
@@ -339,7 +373,7 @@
   
   <section class=" max-w-7xl mx-auto pt-10 mb-10 px-4 sm:px-6 lg:px-0 lg:flex-row md:flex-row flex flex-col gap-4">
   
-    <div class=" flex justify-between w-full md:w-3/5 rounded-xl bg-gradient-to-r from-[#F8CCFB] via-[#D1CFFC] to-[#ACD2FD] p-4">
+    <div class=" transform hover:scale-90 duration-500  flex justify-between w-full md:w-3/5 rounded-xl bg-gradient-to-r from-[#F8CCFB] via-[#D1CFFC] to-[#ACD2FD] p-4">
     <div class=" pl-16 pt-16 ">
       <h4 class="text-2xl pb-1">Under Price</h4>
       <h2 class=" text-4xl font-bold pb-3"> Pet Grooming Mitt</h2>
@@ -349,7 +383,7 @@
     <div class=""><img class=" " src="./c1-assets/cute-dog-mid.png" alt=""></div>
   </div>
   
-  <div class="flex justify-between w-full md:w-2/5  rounded-xl bg-gradient-to-r from-[#FFF9F4] via-[#FAE194] to-[#F9DF8A] ">
+  <div class="transform hover:scale-90 duration-500  flex justify-between w-full md:w-2/5  rounded-xl bg-gradient-to-r from-[#FFF9F4] via-[#FAE194] to-[#F9DF8A] ">
     <div class="pl-10 pt-10  ">
       <h4 class="text-2xl pb-1">Under Price</h4>
       <h2 class=" text-3xl font-bold pb-3"> Pet Grooming Mitt</h2>
@@ -364,11 +398,11 @@
 
 
   </main>
-  <div class="min-h-screen flex flex-col justify-between">
+  <div class=" flex flex-col justify-between">
 
     <!-- Footer -->
-    <footer class="bg-[#ffed93] flex flex-col justify-between w-full mx-auto mt-5 lg:mt-56">
-      <div class="relative bottom-48 lg:relative bottom-56 md:relative bottom-40 text-left flex flex-col lg:flex-row gap-8 max-w-4xl mx-auto bg-[#fff9f4] rounded-xl p-6 mb-0">
+    <footer class="bg-[#ffed93] flex flex-col justify-between w-full mx-auto mt-5 lg:mt-56 ">
+      <div class="transform hover:scale-110 duration-500  relative  lg:relative  md:relative bottom-40 text-left flex flex-col lg:flex-row gap-8 max-w-4xl mx-auto bg-[#fff9f4] rounded-xl p-6 mb-0">
         <div>
           <img class="mx-auto h-full " src="./c1-assets/cute-pet-small.png" alt="">
         </div>
@@ -381,26 +415,26 @@
       </div>
   
       <div class="grid grid-cols-1 bg-[#ffed93] max-w-7xl mx-auto py-10 relative bottom-32">
-        <div class=" mx-auto flex flex-wrap gap-6 justify-between px-6">
+        <div class="  mx-auto flex flex-wrap gap-8 lg:gap-24 justify-between px-6 ">
           <div>
-            <div class="flex items-center gap-2 pb-2">
+            <div class="transform hover:scale-105 duration-500 flex items-center gap-2 pb-2">
               <img src="./c1-assets/logo-footer.png" alt="">
               <h2 class="font-bold">Browse Pets</h2>
             </div>
             <p class="text-sm text-gray-700">Discover a world of treats, toys, and essentials <br> handpicked for your furry friends</p>
           </div>
-          <div class="grid grid-cols-1 space-y-2">
-            <h4 class="font-bold">Find a pet</h4>
-            <h4 class="font-bold">Breeds</h4>
-            <h4 class="font-bold">Contact us</h4>
+          <div class=" grid grid-cols-1 space-y-2">
+            <h4 class="transform hover:scale-105 duration-500 font-bold">Find a pet</h4>
+            <h4 class="transform hover:scale-105 duration-500 font-bold">Breeds</h4>
+            <h4 class="transform hover:scale-105 duration-500 font-bold">Contact us</h4>
           </div>
           <div>
-            <h2 class="font-bold text-xl pb-2">Follow Us</h2>
+            <h2 class="transform hover:scale-110 duration-500 font-bold text-xl pb-2">Follow Us</h2>
             <div class="flex gap-2">
-              <img class="h-10 w-10" src="./c1-assets/facebook (1).png" alt="">
-              <img class="h-10 w-10" src="./c1-assets/instagram (1).png" alt="">
-              <img class="h-10 w-10" src="./c1-assets/linkedin.png" alt="">
-              <img class="h-10 w-10" src="./c1-assets/play.png" alt="">
+              <img class="transform hover:scale-110 duration-500 h-10 w-10" src="./c1-assets/facebook (1).png" alt="">
+              <img class="transform hover:scale-110 duration-500 h-10 w-10" src="./c1-assets/instagram (1).png" alt="">
+              <img class="transform hover:scale-110 duration-500 h-10 w-10" src="./c1-assets/linkedin.png" alt="">
+              <img class=" transform hover:scale-110 duration-500 h-10 w-10" src="./c1-assets/play.png" alt="">
             </div>
           </div>
         </div>
